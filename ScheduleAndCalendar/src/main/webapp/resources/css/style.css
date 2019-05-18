@@ -1,0 +1,91 @@
+.chucnang {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 500px;
+    border: 1px solid gainsboro;
+}
+.chucnang > div {
+    height: 100%;
+    margin: 0;
+}
+
+
+
+.chucnang > div > div{
+  padding: 0
+}
+.chucnang h1,h2 {
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+    border-bottom: 1px solid #cccccc;
+    background: #54afd2;
+}
+.dropdown-menu{
+    right: 10px;
+    left: unset;
+}
+
+ul.navbar-nav{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+a.profilenav {
+    font-weight: 600;
+}
+.chucnang > div:nth-child(1) {
+    box-shadow: 2px 5px 20px 1px #c5c5c5;
+}
+.chucnang > div > div > div {
+    padding: 30px;
+}
+.backhome a {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    border-top: 1px solid #cccccc;
+    line-height: 50px;
+    left: 0;
+    text-align: center;
+    text-decoration: none;
+}
+.backhome a:hover {
+    color: white;
+    font-weight: 600;
+    background: #007bff;
+}   
+ul.left_menu_calendar {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.left_menu_calendar a {
+    color: #e0e0e0;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+ul.left_menu_calendar li {
+    display: inline-block;
+}
+ul.left_menu_calendar li.active a{
+    color: white !important;
+    font-weight: 600;
+}
+td.tool_lesson ul{
+    padding: 0;
+}
+td.tool_lesson ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+.lesson_table th, .lesson_table td, .lesson_table tr {
+    text-align: center;
+}

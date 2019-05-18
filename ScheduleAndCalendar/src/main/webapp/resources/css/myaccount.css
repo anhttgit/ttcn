@@ -1,0 +1,88 @@
+.img-cover img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+}
+.inf_profile {
+    border: 1px solid #cecece61;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 2px 5px 10px 1px #80808069;
+    height: fit-content;
+}
+
+.avatar-cover img {
+    position: absolute;
+    width: 100px;
+    z-index: 9999;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    top: 69%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid white;
+}
+
+.cover-profile {
+    height: 200px;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.name_profile .name {
+    text-align: center;
+    font-size: 25px;
+    color: #403d39;
+    font-weight: 500;
+}
+
+.name_profile .status {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+.name_profile .status::after {
+    content: close-quote;
+    font-size: 19px;
+}
+
+.name_profile .status::before {
+    content: open-quote;
+    font-size: 19px;
+} 
+
+.show_profile {
+    background: white;
+    padding-top: 60px;
+}
+
+
+.myaccount label {
+    color: #9a9a9a;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.edit_profile {
+    border: 1px solid #dedede;
+    background: white;
+    box-shadow: 2px 5px 10px 1px #80808069;
+}
+
+.btn-submit {
+    margin: 0 auto;
+}
+main.page-content {
+    padding-bottom: 50px;
+}
+.subjob {
+    text-align: center;
+    font-size: 13px;
+    color: #9c9c9c;
+    font-weight: 600;
+}

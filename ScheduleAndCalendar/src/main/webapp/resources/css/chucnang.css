@@ -1,0 +1,25 @@
+.chucnang {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 500px;
+    border: 1px solid gray;
+}
+.chucnang > div {
+    height: 100%;
+    margin: 0;
+}
+
+.chucnang > div > div:nth-child(1) {
+    border-right:  1px solid #cccccc;
+}
+
+.chucnang > div > div{
+	padding: 0
+}
+.chucnang h1,h2 {
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+    border-bottom: 1px solid #cccccc;
+}
