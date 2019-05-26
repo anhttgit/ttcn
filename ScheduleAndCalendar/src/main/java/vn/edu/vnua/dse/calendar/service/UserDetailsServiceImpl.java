@@ -6,6 +6,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -31,5 +32,26 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         }
 
         return new CustomUserDetails(user);
+    }
+    
+    
+    public static String getRefreshToken() {
+    	Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    	
+		if (principal instanceof CustomUserDetails) {
+			return ((CustomUserDetails) principal).getRefreshToken();
+		} else {
+			return null;
+		}
+    }
+    
+    public static User getUser() {
+    	Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    	
+		if (principal instanceof CustomUserDetails) {
+			return ((CustomUserDetails) principal).getUser();
+		} else {
+			return null;
+		}
     }
 }

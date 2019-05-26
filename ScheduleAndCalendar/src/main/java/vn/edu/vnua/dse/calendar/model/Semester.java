@@ -1,35 +1,39 @@
 package vn.edu.vnua.dse.calendar.model;
 
-
+import java.sql.Date;
+import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "semester")
 public class Semester {
-	
-	private String id;
-	private String name;
-	private String startDate;
-
-	@OneToMany(mappedBy="semester", fetch=FetchType.EAGER)
-	private Set<Calendar> calendars;
-
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
+	private String id;
+	@Column(name = "name")
+	private String name;
+	@Column(name = "startDate")
+	private Date startDate;
+
+	@OneToMany(mappedBy = "semester", cascade = CascadeType.ALL)
+    private Set<CalendarDetail> calendarDetails = new HashSet<>();
+
+	public Semester(String name, Date startDate) {
+		this.name = name;
+		this.startDate = startDate;
+	}
+	
+	public Semester() {
+		
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -38,7 +42,6 @@ public class Semester {
 		this.id = id;
 	}
 
-	@Column(name = "name")
 	public String getName() {
 		return name;
 	}
@@ -47,24 +50,24 @@ public class Semester {
 		this.name = name;
 	}
 
-	@Column(name = "startDate")
-	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	public String getStartDate() {
+	public Date getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(String startDate) {
+	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
 
-	public Set<Calendar> getSemesters() {
-		return calendars;
+	public Set<CalendarDetail> getCalendarDetails() {
+		return calendarDetails;
 	}
 
-	public void setSemesters(Set<Calendar> semesters) {
-		this.calendars = semesters;
+	public void setCalendarDetails(Set<CalendarDetail> calendarDetails) {
+		this.calendarDetails = calendarDetails;
 	}
+	
+	
+	
 
 	
 }

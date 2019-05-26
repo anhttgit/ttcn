@@ -8,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "slot_time")
@@ -20,11 +18,9 @@ public class SlotTime {
 	private Long id;
 
 	@Column(name = "startTime")
-	@Temporal(TemporalType.TIME)
 	private Time startTime;
 
 	@Column(name = "endTime")
-	@Temporal(TemporalType.TIME)
 	private Time endTime;
 
 	public Long getId() {

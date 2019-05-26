@@ -40,7 +40,7 @@ public class UserController {
 	public String register(Model model) {
 		model.addAttribute("user", new User());
 
-		return "user/register";
+		return "register";
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -74,7 +74,7 @@ public class UserController {
 
 		userService.init(user);//save and encode
 
-		return "user/register";
+		return "register";
 	}
 
 	// Process confirmation link
@@ -143,22 +143,22 @@ public class UserController {
 		if (logout != null)
 			model.addAttribute("message", "You have been logged out successfully.");
 
-		return "user/login";
+		return "login";
 	}
 
 	@RequestMapping(value = { "/home" }, method = RequestMethod.GET)
 	public String welcome(Model model) {
 		if(securityService.hasRole(AppConstant.ROLE_USER)) {
-			return "home";
+			return "index";
 		}
-		return "admin/admin";
+		return "admin";
 	}
 	
-	@RequestMapping(value = "/change_password", method = RequestMethod.GET)
-	public String changePassword(Model model) {
-		model.addAttribute("user", new User());
-
-		return "user/change_password";
-	}
+//	@RequestMapping(value = "/change_password", method = RequestMethod.GET)
+//	public String changePassword(Model model) {
+//		model.addAttribute("user", new User());
+//
+//		return "change_password";
+//	}
 	
 }

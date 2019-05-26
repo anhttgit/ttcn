@@ -29,6 +29,21 @@ public class CustomUserDetails implements UserDetails {
 		this.user = user;
 	}
 
+	public String getEmail() {
+		return user.getEmail();
+	}
+	public String getRefreshToken() {
+		return user.getRefreshToken();
+	}
+	
+	public void setRefreshToken(String refreshToken) {
+		this.user.setRefreshToken(refreshToken);
+	}
+	
+	public String getFullName() {
+		return user.getLastName() + " " + user.getLastName();
+	}
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		final Set<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();

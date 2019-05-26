@@ -20,13 +20,23 @@
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
 
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix">
-			<value>/WEB-INF/views/</value>
-		</property>
-		<property name="suffix">
-			<value>.jsp</value>
+	<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<property name="prefix"> <value>/WEB-INF/views/</value> </property> <property 
+		name="suffix"> <value>.jsp</value> </property> </bean> -->
+
+	<!-- mapping các template tiles -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles3.TilesView" />
+	</bean>
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<!-- khai báo các file định nghĩa layout -->
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
 		</property>
 	</bean>
 </beans>

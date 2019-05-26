@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/vn/edu/vnua/dse/calendar/controller/ScheduleController.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/layout/header.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/layout/home.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/schedule/create.jsp=UTF-8
